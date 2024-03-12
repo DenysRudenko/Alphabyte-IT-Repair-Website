@@ -15,9 +15,10 @@
   
     <header>
      <!-- Navigation bar Bootstrap -->
-     <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
         <div class="container">
-          <img src="assets/images/logo.jpeg" alt="logotype">
+          <img class="logo" src="assets/images/logo.png" alt="logotype">
+          <h2 class="brand">Solutions</h2>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,23 +27,27 @@
              
             <!-- Navigation menu -->
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
+                <a class="nav-link" href="assets/html/shop.html">Shop</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="assets/html/contact.html">Contact Us</a>
               </li>
 
               <!-- Navigation icons -->
 
               <li class="nav-item">
-                <i class="fas fa-solid fa-cart-shopping"></i>
-                <i class="fas fa-regular fa-user"></i>
+                <a href="assets/html/cart.html" class="icon-link">
+                  <i class="fas fa-shopping-cart"></i>
+              </a>
+              <a href="assets/html/account.html" class="icon-link">
+                <i class="fas fa-user"></i>
+            </a>
               </li>
             
             </ul>
@@ -105,14 +110,14 @@
       </section>
 
       <!-- Featured -->
-      <section id="featured" class="my-5 pb5">
+      <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
           <h3>Our Featured</h3>
-          <hr>
+          <hr class="mx-auto">
           <p>Here you can check out our new featured products</p>
         </div>
         <div class="row mx-auto container-fluid">
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/featured1.jpg" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -126,7 +131,7 @@
             <button class="buy-btn">Buy Now</button>
           </div>
 
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/featured2.jpg" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -140,7 +145,7 @@
             <button class="buy-btn">Buy Now</button>
           </div>
 
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/featured3.jpg" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -154,7 +159,7 @@
             <button class="buy-btn">Buy Now</button>
           </div>
 
-          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/featured4.jpg" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -170,9 +175,287 @@
         </div>
       </section>
     
+      <!-- Banner -->
+
+      <section id="banner" class="my-5 py-5">
+        <div class="container">
+          <h4>MID SEASON SALE</h4>
+          <h1>Autumn Collection <br> UP to 30% OFF</h1>
+          <button class="text-uppercase">Shop Now</button>
+        </div>
+      </section>
+
+      <!-- CPUS -->
+
+      <section id="featured" class="my-5">
+        <div class="container text-center mt-5 py-5">
+          <h3>CPUS</h3>
+          <hr>
+          <p>Here you can check out our awazing clothes</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured1.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured2.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured3.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured4.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </section>
 
 
-    <footer>
+      <!-- GPUS -->
+
+      <section id="gpu" class="my-5">
+        <div class="container text-center mt-5 py-5">
+          <h3>GPUS</h3>
+          <hr>
+          <p>Here you can check out our awazing shoes</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured1.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured2.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured3.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured4.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Other parts -->
+
+      <section id="parts" class="my-5">
+        <div class="container text-center mt-5 py-5">
+          <h3>Best Parts</h3>
+          <hr>
+          <p>Here you can check out our awazing shoes</p>
+        </div>
+        <div class="row mx-auto container-fluid">
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured1.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured2.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured3.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+
+          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/images/featured4.jpg" alt="product">
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name">Sports Shoes</h5>
+            <h4 class="p-price">199.8</h4>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+
+    <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <img class="logo" src="assets/images/logo.png" alt="logo">
+            <p class="pt-3">We provide the best products for your computer</p>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <h5 class="pb-2">Featured</h5>
+            <ul class="text-uppercase">
+              <li><a href="">men</a></li>
+              <li><a href="">woman</a></li>
+              <li><a href="">boys</a></li>
+              <li><a href="">girls</a></li>
+              <li><a href="">new arrivals</a></li>
+              <li><a href="">clothes</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <h5 class="pb-2">Contact Us</h5>
+            <div>
+              <h6 class="text-uppercase">Address</h6>
+              <p>1234 Street Name, Dublin</p>
+            </div>
+
+            <div>
+              <h6 class="text-uppercase">Phone</h6>
+              <p>+35 38 781 21 32</p>
+            </div>
+
+            <div>
+              <h6 class="text-uppercase">Email</h6>
+              <p>example@gmail.com</p>
+            </div>
+
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-sm-12">
+            <h5 class="pb-2">Instagram</h5>
+            <div class="row">
+              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured2.jpg" alt="image">
+              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured4.jpg" alt="image">
+              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured3.jpg" alt="image">
+              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured2.jpg" alt="image">
+              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured1.jpg" alt="image">
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright mt-5">
+          <div class="row container mx-auto">
+
+            <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+              <img src="assets/images/payment.png" alt="payment">
+            </div>
+
+            <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
+              <p>ECommerce @ 2024 All Rights Reserved</p>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
 
     </footer>
 
