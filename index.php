@@ -27,7 +27,7 @@
              
             <!-- Navigation menu -->
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="assets/html/shop.html">Shop</a>
@@ -42,7 +42,7 @@
               <!-- Navigation icons -->
 
               <li class="nav-item">
-                <a href="assets/html/cart.html" class="icon-link">
+                <a href="assets/html/cart.php" class="icon-link">
                   <i class="fas fa-shopping-cart"></i>
               </a>
               <a href="assets/html/account.html" class="icon-link">
@@ -179,7 +179,7 @@
             </div>
             <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
             <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
-            <a href="assets/html/single-product.php"><button class="buy-btn">Buy Now</button></a>
+            <a href="<?php echo "assets/html/single_product.php?product_id=". $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
             
           </div>
 
