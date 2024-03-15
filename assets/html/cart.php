@@ -1,10 +1,72 @@
+<?php
+// Start the session to access and manipulate session data
+session_start();
+
+// Initialize the cart in session if not already set
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+if (isset($_POST['add_to_cart'])) {
+    $products_array_ids = array_column($_SESSION['cart'], 'product_id');
+
+    if (!in_array($_POST['product_id'], $products_array_ids)) {
+        $product_array = [
+            'product_id' => $_POST['product_id'],
+            'product_name' => $_POST['product_name'],
+            'product_price' => $_POST['product_price'],
+            'product_image' => $_POST['product_image'],
+            'product_quantity' => $_POST['product_quantity']
+        ];
+
+        $_SESSION['cart'][$_POST['product_id']] = $product_array;
+        calculateTotalCart(); // Recalculate cart total after adding
+    } else {
+        echo '<script>alert("Product was already added!");</script>';
+    }
+} elseif (isset($_POST['remove_product'])) {
+    $product_id = $_POST['product_id'];
+
+    if (isset($_SESSION['cart'][$product_id])) {
+        unset($_SESSION['cart'][$product_id]);
+        calculateTotalCart(); // Recalculate cart total after removal
+    }
+} elseif (isset($_POST['edit_quantity'])) {
+    $product_id = $_POST['product_id'];
+    $product_quantity = $_POST['product_quantity'];
+
+    if (isset($_SESSION['cart'][$product_id])) {
+        $_SESSION['cart'][$product_id]['product_quantity'] = $product_quantity;
+        calculateTotalCart(); // Recalculate cart total after editing
+    }
+} else {
+    header('Location: ../../index.php');
+    exit;
+}
+
+function calculateTotalCart() {
+    $total = 0;
+
+    foreach ($_SESSION['cart'] as $product) {
+        $total += ($product['product_price'] * $product['product_quantity']);
+    }
+
+    $_SESSION['total'] = $total;
+}
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Cart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/1ae03f48b3.js" crossorigin="anonymous"></script>
@@ -33,7 +95,7 @@
              
             <!-- Navigation menu -->
               <li class="nav-item">
-                <a class="nav-link" href="../../index.html">Home</a>
+                <a class="nav-link" href="../../index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="shop.html">Shop</a>
@@ -55,52 +117,85 @@
                 <i class="fas fa-user"></i>
             </a>
               </li>
-            
             </ul>
           </div>
         </div>
       </nav>
-   </header>  
+   </header>   
 
-   <!-- Checkout -->
+   <!-- Cart -->
 
-    <section class="my-5 py-5">
-        <div class="container text-center mt-3 pt-5">
-            <h2 class="form-weight-bold">Checkout</h2>
-            <hr class="mx-auto">
-        </div>
-        <div class="mx-auto container">
-            <form id="checkout-form" action="">
-                <div class="form-group checkout-small-element">
-                    <label for="">Name</label>
-                    <input placeholder="Name" required id="checkout-name" class="form-control" name="name" type="text">
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label for="">Email</label>
-                    <input placeholder="Email" required id="checkout-email" class="form-control" name="phone" type="text">
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label for="">Phone</label>
-                    <input placeholder="Phone Number" required id="checkout-password" class="form-control" name="phone" type="tel">
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label for="">City</label>
-                    <input placeholder="City" required id="checkout-city" class="form-control" name="city" type="text">
-                </div>
-                <div class="form-group checkout-large-element">
-                    <label for="">Address</label>
-                    <input placeholder="City" required id="checkout-address" class="form-control" name="address" type="text">
-                </div>
-                <div class="form-group checkout-btn-container">
-                    <input id="checkout-btn" class="btn" type="submit" value="Checkout">
-                </div>
-            </form>
-        </div>
-    </section>
+   <section class="cart container my-5 py-5">
+    <div class="container mt-5">
+        <h2 class="font-weight-bold">Your Cart</h2>
+        <hr>
+    </div>
 
+    <table class="mt-5 pt-5">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
 
+        <?php foreach($_SESSION['cart'] as $key => $value) { ?>
 
-      
+        <tr>
+            <td>
+                <div class="product-info">
+                    <img src="../images/<?php echo $value['product_image']; ?>" alt="image">
+                    <div>
+                        <p><?php echo $value['product_name']; ?></p>
+                        <small><span>$</span><?php echo $value['product_price']; ?></small>
+                        <br>
+                        <form method="POST" action="cart.php">
+                            <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
+                            <input type="submit" name="remove_product" class="remove-btn" value="Remove"</input>
+                        </form>
+                        
+                    </div>
+                </div>
+            </td>
+            <td>
+                
+                <form method="POST" action="cart.php">
+                  <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
+                  <input type="number" name="product_quantity" value="<?php echo $value['product_quantity']; ?>">
+                  <input type="submit" class="edit-btn" value="edit" name="edit_quantity" type="text">
+                </form>
+                
+            </td>
+
+            <td>
+                <span>$</span>
+                <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
+            </td>
+        </tr>
+        
+        <?php } ?>
+        
+    </table>
+
+    <div class="cart-total">
+        <table>
+            <!-- <tr>
+                <td>Subtotal</td>
+                <td>$155</td>
+            </tr> -->
+            <tr>
+                <td>Total</td>
+                <td>$ <?php echo $_SESSION['total']; ?></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="checkout-container">
+        <form method="POST" action="checkout.php">
+        <input type="submit" class="btn checkout-btn" value="Checkout" name="checkout">
+        </form>
+       
+    </div>
+   </section>
 
    <!-- Footer -->
 

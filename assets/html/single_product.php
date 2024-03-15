@@ -50,7 +50,7 @@
              
             <!-- Navigation menu -->
               <li class="nav-item">
-                <a class="nav-link" href="../../index.html">Home</a>
+                <a class="nav-link" href="../../index.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="shop.html">Shop</a>
@@ -75,11 +75,12 @@
       </nav>
    </header>
 
+
      <!-- Single Product -->
      <section class="container single-product my-5 pt-5">
         <div class="row mt-5">
 
-          <?php while($row = $product->fetch_assoc()){ ?>
+          <?php while($row = $products->fetch_assoc()){ ?>
 
             <div  class="col-lg-5 col-md-6 col-sm-12">
                 <img id="mainImg" class="img-fluid w-100 pb-1" src="../images/<?php echo $row['product_image']; ?>" alt="image">
@@ -88,7 +89,7 @@
                         <img class="small-img" src="../images/<?php echo $row['product_image']; ?>" width="100%" alt="image">
                     </div>
                     <div class="small-img-col">
-                        <img class="small-img" src="../images/f<?php echo $row['product_image2']; ?>" width="100%" alt="image">
+                        <img class="small-img" src="../images/<?php echo $row['product_image2']; ?>" width="100%" alt="image">
                     </div>
                     <div class="small-img-col">
                         <img class="small-img" src="../images/<?php echo $row['product_image3']; ?>" width="100%" alt="image">
@@ -99,20 +100,29 @@
                 </div>
             </div>
 
-           
-    
+              
             <div class="col-lg-6 col-md-12 col-12">
                 <h6>Men/Shoes</h6>
                 <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
                 <h2>$<?php echo $row['product_price']; ?></h2>
-                <input type="number" value="1">
-                <button class="buy-btn">Add To Cart</button>
+
+                <form method="POST" action="cart.php">
+                  <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+                  <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>">
+                  <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>">
+                  <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>">
+
+                  <input type="number" name="product_quantity" value="1">
+                  <button class="buy-btn" type="submit" name="add_to_cart">Add To Cart</button>
+                </form>
+     
                 <h4 class="mt-5 mb-5">Product details</h4>
                 <span><?php echo $row['product_description']; ?>
                 </span>
-            </div>
+            </div>    
 
             <?php } ?>
+
         </div>
        </section>
 
