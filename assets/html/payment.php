@@ -1,13 +1,20 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Payment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    <script src="https://kit.fontawesome.com/1ae03f48b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -18,79 +25,66 @@
 </head>
 
 <body>
-
+  
     <header>
-        <!-- Navigation bar Bootstrap -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
-           <div class="container">
-             <img class="logo" src="../images/logo.png" alt="logotype">
-             <h2 class="brand">Solutions</h2>
-             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
-               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
-               <!-- Navigation menu -->
-                 <li class="nav-item">
-                   <a class="nav-link" href="../../index.html">Home</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link" href="shop.html">Shop</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link" href="#">Blog</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link" href="contact.html">Contact Us</a>
-                 </li>
-   
-                 <!-- Navigation icons -->
-   
-                 <li class="nav-item">
-                  <a href="cart.html" class="icon-link">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="account.html" class="icon-link">
-                  <i class="fas fa-user"></i>
+     <!-- Navigation bar Bootstrap -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+        <div class="container">
+          <img class="logo" src="../images/logo.png" alt="logotype">
+          <h2 class="brand">Solutions</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+            <!-- Navigation menu -->
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+
+              <!-- Navigation icons -->
+
+              <li class="nav-item">
+                <a href="cart.php" class="icon-link">
+                  <i class="fas fa-shopping-cart"></i>
               </a>
-                </li>
-               
-               </ul>
-             </div>
-           </div>
-         </nav>
-      </header>   
-      
-    <!-- login -->
+              <a href="account.html" class="icon-link">
+                <i class="fas fa-user"></i>
+            </a>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </nav>
+   </header>  
+
+   <!-- Payment -->
+
     <section class="my-5 py-5">
         <div class="container text-center mt-3 pt-5">
-            <h2 class="form-weight-bold">Login</h2>
+            <h2 class="form-weight-bold">Payment</h2>
             <hr class="mx-auto">
         </div>
-        <div class="mx-auto container">
-            <form id="login-form" action="">
-                <div class="form-group">
-                    <label for="">Email</label>
-                    <input placeholder="Email" required id="login-email" class="form-control" name="email" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input placeholder="Password" required id="login-password" class="form-control" name="password" type="password">
-                </div>
-                <div class="form-group">
-                    <input id="login-btn" class="btn" type="submit" value="Login">
-                </div>
-                <div class="form-group">
-                    <a id="register-url" class="btn" href="">Dont have an account? Register</a>
-                </div>
-            </form>
+        <div class="mx-auto container text-center">
+            <p><?php echo $_GET['order_status']; ?></p>
+            <p>Total payment: $ <?php echo $_SESSION['total']; ?></p>
+            <input class="btn btn-primary" type="submit" value="Pay Now">
         </div>
     </section>
 
 
-
-      <!-- Footer -->
+   <!-- Footer -->
 
    <footer class="mt-5 py-5">
     <div class="row container mx-auto pt-5">
@@ -160,9 +154,9 @@
       </div>
     </div>
 
-    </footer>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 </html>
