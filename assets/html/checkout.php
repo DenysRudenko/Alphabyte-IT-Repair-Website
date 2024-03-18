@@ -21,7 +21,7 @@ if( !empty($_SESSION["cart"]) && isset($_POST['checkout'])) {
     <title>Checkout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    <script src="https://kit.fontawesome.com/1ae03f48b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -84,14 +84,14 @@ if( !empty($_SESSION["cart"]) && isset($_POST['checkout'])) {
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container">
-            <form id="checkout-form" method="POST" action="place_order.php">
+            <form id="checkout-form" method="POST" action="../../server/place_order.php">
                 <div class="form-group checkout-small-element">
                     <label for="">Name</label>
                     <input placeholder="Name" required id="checkout-name" class="form-control" name="name" type="text">
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Email</label>
-                    <input placeholder="Email" required id="checkout-email" class="form-control" name="phone" type="text">
+                    <input placeholder="Email" required id="checkout-email" class="form-control" name="email" type="text">
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Phone</label>

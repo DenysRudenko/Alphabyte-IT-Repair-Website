@@ -1,13 +1,84 @@
+<?php 
+
+session_start();
+
+include('../../server/connection.php');
+
+if(isset($_POST["register"])){
+
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $confirm_password = $_POST['confirmPassword'];
+
+
+  // if passwords dont match
+  if($password !== $confirm_password){
+    header('location: register.php?error=Passwords dont match!');
+  
+
+
+  // if passwords is less than 6 chars
+  } else if(strlen($password) < 6){
+    header('location: register.php?error=Password must be at least 6 characters!');
+  
+
+  // if there is no error
+  } else {
+
+      // check the user with email or not
+      $stmt1 = $conn->prepare('SELECT COUNT(*) FROM users WHERE user_email=?');
+      $stmt1->bind_param('s', $email);
+      $stmt1->execute();
+      $stmt1->bind_result($num_rows);
+      $stmt1->store_result();
+      $stmt1->fetch();
+
+      // if there is a user with already registered with this email
+      if($num_rows != 0){
+        header('location: register.php?error=User with this email already exists!');
+
+        // if no user registrated with this email
+      } else {
+     
+        // create a new user
+        $stmt = $conn->prepare('INSERT INTO users(user_name, user_email, user_password)
+        VALUES (?, ?, ?)');
+
+        $stmt->bind_param('sss', $name, $email, md5($password));
+
+        // if account was created successfully
+        If($stmt->execute()){
+          $_SESSION['user_email'] = $email;
+          $_SESSION['user_name'] = $name;
+          $_SESSION['logged_in'] = true;
+          header('location: account.php?register=You registreted succesfully!');
+
+          // account could not be created
+        } else {
+          header('location: register.php?register=Could not create an accaount at the moment!');
+        }
+      }
+  }
+
+  // if user alredy registrated, then take user to account page
+}else if(isset($_SESSION['logged_in'])){
+  header('location: account.php');
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    <script src="https://kit.fontawesome.com/1ae03f48b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -62,73 +133,40 @@
          </nav>
       </header>   
       
-    <!-- Account -->
+    <!-- Register -->
     <section class="my-5 py-5">
-        <div class="row container mx-auto">
-            <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-                <h3 class="font-weight-bold">Account Info</h3>
-                <hr class="mx-auto">
-                <div class="account-info">
-                    <p>Name <span>John</span></p>
-                    <p>Email <span>john@email.com</span></p>
-                    <p><a href="#" id="orders-btn">Your Orders</a></p>
-                    <p><a href="#" id="logout-btn">Logout</a></p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <form id="account-form" action="">
-                    <h3>Change Password</h3>
-                    <hr class="mx-auto">
-                    <div class="form-group">
-                        <label for="">Password</label>
-                        <input required class="form-control" name="password" id="account-password" placeholder="Password" type="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Confirm Password</label>
-                        <input required class="form-control" name="confirmPassword" id="account-password-confirm" placeholder="Password" type="password">
-                    </div>
-                    <div class="form-group">
-                        <input value="Change Password" class="btn" id="change-pass-btn" type="submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Orders -->
-    <section class="orders container my-5 py-3">
-        <div class="container mt-2">
-            <h2 class="font-weight-bold text-center">Your Orders</h2>
+        <div class="container text-center mt-3 pt-5">
+            <h2 class="form-weight-bold">Register</h2>
             <hr class="mx-auto">
         </div>
-    
-        <table class="mt-5 pt-5">
-            <tr>
-                <th>Product</th>
-                <th>Date</th>
-            </tr>
-            <tr>
-                <td>
-                   <div class="product-info">
-                        <img src="../images/featured1.jpg" alt="image">
-                        <div>
-                            <p class="mt-3">White Shoes</p>
-                        </div>
-                   </div>
-                </td>
-
-                <td>
-                    <span>2024-11-3</span>
-                </td>
-    
-                
-            </tr>
-           
-           
-        </table>
-    
-        
-       </section>
+        <div class="mx-auto container">
+            <form id="register-form" method="POST" action="register.php">
+              <p style="color: red; "><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input placeholder="Name" required id="register-name" class="form-control" name="name" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input placeholder="Email" required id="register-email" class="form-control" name="email" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input placeholder="Password" required id="register-password" class="form-control" name="password" type="password">
+                </div>
+                <div class="form-group">
+                    <label for="">Confirm Password</label>
+                    <input placeholder="Confirm Password" required id="register-confirm-password" class="form-control" name="confirmPassword" type="password">
+                </div>
+                <div class="form-group">
+                    <input id="register-btn" class="btn" name="register" type="submit" value="Register">
+                </div>
+                <div class="form-group">
+                    <a id="login-url" class="btn" href="login.php">Have an account? Log In</a>
+                </div>
+            </form>
+        </div>
+    </section>
 
 
 

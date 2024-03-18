@@ -40,8 +40,8 @@ if (isset($_POST['add_to_cart'])) {
         calculateTotalCart(); // Recalculate cart total after editing
     }
 } else {
-    header('Location: ../../index.php');
-    exit;
+    // header('Location: ../../index.php');
+    // exit;
 }
 
 function calculateTotalCart() {
@@ -69,7 +69,7 @@ function calculateTotalCart() {
     <title>Cart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    <script src="https://kit.fontawesome.com/1ae03f48b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -110,7 +110,7 @@ function calculateTotalCart() {
               <!-- Navigation icons -->
 
               <li class="nav-item">
-                <a href="cart.html" class="icon-link">
+                <a href="cart.php" class="icon-link">
                   <i class="fas fa-shopping-cart"></i>
               </a>
               <a href="account.html" class="icon-link">

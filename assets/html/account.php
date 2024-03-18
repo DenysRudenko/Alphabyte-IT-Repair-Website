@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Account</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    <script src="https://kit.fontawesome.com/1ae03f48b3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -33,7 +33,7 @@
                 
                <!-- Navigation menu -->
                  <li class="nav-item">
-                   <a class="nav-link" href="../../index.html">Home</a>
+                   <a class="nav-link" href="../../index.php">Home</a>
                  </li>
                  <li class="nav-item">
                    <a class="nav-link" href="shop.html">Shop</a>
@@ -48,7 +48,7 @@
                  <!-- Navigation icons -->
    
                  <li class="nav-item">
-                  <a href="cart.html" class="icon-link">
+                  <a href="cart.php" class="icon-link">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
                 <a href="account.html" class="icon-link">
@@ -62,39 +62,73 @@
          </nav>
       </header>   
       
-    <!-- Register -->
+    <!-- Account -->
     <section class="my-5 py-5">
-        <div class="container text-center mt-3 pt-5">
-            <h2 class="form-weight-bold">Register</h2>
-            <hr class="mx-auto">
-        </div>
-        <div class="mx-auto container">
-            <form id="register-form" action="">
-                <div class="form-group">
-                    <label for="">Name</label>
-                    <input placeholder="Name" required id="register-name" class="form-control" name="name" type="text">
+        <div class="row container mx-auto">
+            <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
+                <h3 class="font-weight-bold">Account Info</h3>
+                <hr class="mx-auto">
+                <div class="account-info">
+                    <p>Name <span>John</span></p>
+                    <p>Email <span>john@email.com</span></p>
+                    <p><a href="#" id="orders-btn">Your Orders</a></p>
+                    <p><a href="#" id="logout-btn">Logout</a></p>
                 </div>
-                <div class="form-group">
-                    <label for="">Email</label>
-                    <input placeholder="Email" required id="register-email" class="form-control" name="email" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input placeholder="Password" required id="register-password" class="form-control" name="password" type="password">
-                </div>
-                <div class="form-group">
-                    <label for="">Confirm Password</label>
-                    <input placeholder="Confirm Password" required id="register-confirm-password" class="form-control" name="confirmPassword" type="password">
-                </div>
-                <div class="form-group">
-                    <input id="register-btn" class="btn" type="submit" value="Register">
-                </div>
-                <div class="form-group">
-                    <a id="login-url" class="btn" href="">Have an account? Log In</a>
-                </div>
-            </form>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <form id="account-form" action="">
+                    <h3>Change Password</h3>
+                    <hr class="mx-auto">
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input required class="form-control" name="password" id="account-password" placeholder="Password" type="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Confirm Password</label>
+                        <input required class="form-control" name="confirmPassword" id="account-password-confirm" placeholder="Password" type="password">
+                    </div>
+                    <div class="form-group">
+                        <input value="Change Password" class="btn" id="change-pass-btn" type="submit">
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
+    
+    <!-- Orders -->
+    <section class="orders container my-5 py-3">
+        <div class="container mt-2">
+            <h2 class="font-weight-bold text-center">Your Orders</h2>
+            <hr class="mx-auto">
+        </div>
+    
+        <table class="mt-5 pt-5">
+            <tr>
+                <th>Product</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>
+                   <div class="product-info">
+                        <img src="../images/featured1.jpg" alt="image">
+                        <div>
+                            <p class="mt-3">White Shoes</p>
+                        </div>
+                   </div>
+                </td>
+
+                <td>
+                    <span>2024-11-3</span>
+                </td>
+    
+                
+            </tr>
+           
+           
+        </table>
+    
+        
+       </section>
 
 
 
