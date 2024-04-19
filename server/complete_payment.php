@@ -37,6 +37,4 @@ if(isset($_GET['transaction_id']) && isset($_GET['order_id'])){
 }
 
 
-
-
 ?>

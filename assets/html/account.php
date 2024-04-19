@@ -10,7 +10,6 @@ if(!isset($_SESSION["logged_in"])){
   exit;
 }
 
-
 // Allow to logout from account 
 if(isset($_GET['logout'])) {
   if(isset($_SESSION['logged_in'])) {
@@ -70,8 +69,6 @@ if(isset($_SESSION["logged_in"])) {
 
 ?>
 
-
-      
     <!-- Account -->
     <section class="my-5 py-5">
         <div class="row container mx-auto">
@@ -132,7 +129,7 @@ if(isset($_SESSION["logged_in"])) {
             </div>
         </div>
     </section>
-    
+  
     <!-- Orders -->
     <section id="orders" class="orders container my-5 py-3">
         <div class="container mt-2">
@@ -181,9 +178,7 @@ if(isset($_SESSION["logged_in"])) {
               <?php } ?>
            
            
-        </table>
-    
-        
+        </table>  
        </section>
 
 <?php 
