@@ -10,6 +10,7 @@ if(isset($_GET['transaction_id']) && isset($_GET['order_id'])){
     $order_status = "paid";
     $transaction_id = $_GET['transaction_id'];
     $user_id = $_SESSION['user_id'];
+    $payment_date = date('Y-m-d H:i:s');
 
     //change order status to paid
     $stmt = $conn->prepare(
@@ -21,10 +22,10 @@ if(isset($_GET['transaction_id']) && isset($_GET['order_id'])){
 
     //store payment info in db
     $stmt1 = $conn->prepare('INSERT INTO payments (
-        order_id, user_id, transaction_id)
-        VALUES (?, ?, ?)');
+        order_id, user_id, transaction_id, payment_date)
+        VALUES (?, ?, ?, ?)');
 
-    $stmt1->bind_param('iii', $order_id, $user_id, $transaction_id);
+    $stmt1->bind_param('iiss', $order_id, $user_id, $transaction_id, $payment_date);
     
     $stmt1->execute();
 
