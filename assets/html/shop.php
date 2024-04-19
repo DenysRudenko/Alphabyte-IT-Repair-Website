@@ -7,19 +7,40 @@ include('../../server/connection.php');
 // use the search section
 if(isset($_POST['search'])){
 
+   // Pagination
+   if(isset($_GET['page_no']) && $_GET['page_no'] != "") {
+
+    // if user has already entered page then page number is the one that selected
+    $page_no = $_GET['page_no'];
+  } else {
+
+    // if user just entered the page then default page is 1
+    $page_no = 1;
+  }
+
   $category = $_POST['category'];
 
   $price = $_POST['price'];
 
-  $stmt = $conn->prepare("SELECT * FROM products WHERE product_category = ? AND product_price <= ?");
+  // return number of products 
+  $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM products WHERE product_category = ? AND product_price <= ? ");
+  $stmt1->bind_param('si', $category, $price);
+  $stmt1->execute();
+  $stmt1->bind_result($total_records);
+  $stmt1->store_result();
+  $stmt1->fetch();
 
-  $stmt->bind_param("si", $category, $price);
+  $total_records_per_page = 8;
+  $offset = ($page_no - 1) * $total_records_per_page;
+  $previous_page = $page_no - 1;
+  $next_page = $page_no + 1;
+  $adjacents = "2";
+  $total_number_of_pages = ceil($total_records / $total_records_per_page);
 
-  // Run the querry
-  $stmt->execute();
-
-  // Get results and add them to stmt variable
-  $products = $stmt->get_result();
+  $stmt2 = $conn->prepare("SELECT * FROM products WHERE product_category = ? AND product_price <= ? LIMIT $offset, $total_records_per_page");
+  $stmt2->bind_param("si", $category, $price);
+  $stmt2->execute();
+  $products = $stmt2->get_result();
 
   // return all products
 }else {
@@ -68,8 +89,6 @@ if(isset($_POST['search'])){
   $products = $stmt2->get_result();
 
 }
-
-
 ?>
 
 
