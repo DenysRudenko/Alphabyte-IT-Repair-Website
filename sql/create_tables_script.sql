@@ -46,15 +46,15 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `payments` (
-  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `transaction_id` varchar(250) NOT NULL,
-  PRIMARY KEY (`payment_id`),
-  FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE,
-  FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS payments (
+  payment_id int(11) NOT NULL AUTO_INCREMENT,
+  order_id int(11) NOT NULL,
+  user_id int(11) NOT NULL,
+  transaction_id varchar(250) NOT NULL,
+  payment_date DATETIME NOT NULL,
+  PRIMARY KEY (payment_id),
+  FOREIGN KEY (order_id) REFERENCES orders (order_id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
