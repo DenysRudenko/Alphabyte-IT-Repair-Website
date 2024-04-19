@@ -579,8 +579,8 @@ th:last-child {
 }
 
 #search {
-    position: fixed;
-    left: 0;
+    position: relative;
+    left: 10px;
     top: -50px;
     float: left;
 }
