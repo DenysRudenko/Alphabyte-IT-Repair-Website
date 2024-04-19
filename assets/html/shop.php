@@ -103,35 +103,35 @@ if(isset($_POST['search'])){
       <div class="row mx-auto container">
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <p>Category</p>
-            <div class="form-check">
-              <input id="category_one" value="shoes" class="form-check-input" name="category" type="radio">
-              <label for="flexRadioDefault1" class="form-check-label">
-                Shoes
-              </label>
-            </div>
+        <p>Category</p>
+        <div class="form-check">
+          <input id="category_one" value="shoes" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'shoes'){echo 'checked'; } ?>>
+          <label for="category_one" class="form-check-label">
+            Shoes
+          </label>
+        </div>
 
-            <div class="form-check">
-              <input id="category_two" value="coats" class="form-check-input" name="category" type="radio" checked>
-              <label for="flexRadioDefault2" class="form-check-label">
-                Coats
-              </label>
-            </div>
+        <div class="form-check">
+          <input id="category_two" value="coats" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'coats'){echo 'checked'; } ?>>
+          <label for="category_two" class="form-check-label">
+            Coats
+          </label>
+        </div>
 
-            <div class="form-check">
-              <input id="category_two" value="watches" class="form-check-input" name="category" type="radio" checked>
-              <label for="flexRadioDefault3" class="form-check-label">
-                Watches
-              </label>
-            </div>
+        <div class="form-check">
+          <input id="category_three" value="watches" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'watches'){echo 'checked'; } ?>>
+          <label for="category_three" class="form-check-label">
+            Watches
+          </label>
+        </div>
 
-            <div class="form-check">
-              <input id="category_two" value="bags" class="form-check-input" name="category" type="radio" checked>
-              <label for="flexRadioDefault3" class="form-check-label">
-                Bags
-              </label>
-            </div>
-          
+        <div class="form-check">
+          <input id="category_four" value="bags" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'bags'){echo 'checked'; } ?>>
+          <label for="category_four" class="form-check-label">
+            Bags
+          </label>
+        </div>
+
         </div>
       </div>
 
@@ -139,7 +139,7 @@ if(isset($_POST['search'])){
         <div class="col-lg-12 col-md-12 col-sm-12">
 
           <p>Price</p>
-          <input type="range" name="price" value="100" class="form-range w-50" min="1" max="1000" id="customRange2">
+          <input type="range" name="price" value="<?php if(isset($price)) { echo $price; } else{ echo "100"; } ?>" class="form-range w-50" min="1" max="1000" id="customRange2">
           <div class="w-50">
             <span style="float: left;">1</span>
             <span style="float: right;">1000</span>
