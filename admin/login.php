@@ -1,7 +1,6 @@
 <?php 
 
-session_start();
-
+include('header.php');
 include("../server/connection.php");
 
 if(isset($_SESSION['admin_logged_in'])) {
@@ -28,9 +27,9 @@ if(isset($_POST["login_btn"])){
     if($stmt->num_rows() == 1){
       $stmt->fetch();
       
-      $_SESSION['admin_id'] = $user_id;
-      $_SESSION['admin_name'] = $user_name;
-      $_SESSION['admin_email'] = $user_email;
+      $_SESSION['admin_id'] = $admin_id;
+      $_SESSION['admin_name'] = $admin_name;
+      $_SESSION['admin_email'] = $admin_email;
       $_SESSION['admin_logged_in'] = true;
 
       header('location: index.php?login_success=Logged in successfuly!');
