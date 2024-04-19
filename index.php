@@ -103,17 +103,17 @@ include("layouts/header.php");
 
       <!-- CPUS -->
 
-      <section id="featured" class="my-5">
+      <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
-          <h3>CPUS</h3>
-          <hr>
-          <p>Here you can check out our awazing clothes</p>
+          <h3>Our Featured</h3>
+          <hr class="mx-auto">
+          <p>Here you can check out our new featured watches</p>
         </div>
         <div class="row mx-auto container-fluid">
 
-          <?php include('server/get_products.php'); ?>
+        <?php include('server/get_watches.php'); ?>
 
-          <?php while($row=$coats_products->fetch_assoc()) { ?>
+        <?php while($row = $watches->fetch_assoc()) { ?>
 
           <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
@@ -127,40 +127,33 @@ include("layouts/header.php");
             <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
             <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
             <a href="<?php echo "assets/html/single_product.php?product_id=". $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
-            
           </div>
 
-          <?php } ?>
+         <?php } ?>
 
+          
+
+         
         </div>
       </section>
 
 
       <!-- GPUS -->
 
-      <section id="gpu" class="my-5">
+      <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
-          <h3>GPUS</h3>
-          <hr>
-          <p>Here you can check out our awazing shoes</p>
+          <h3>Our Featured</h3>
+          <hr class="mx-auto">
+          <p>Here you can check out our new featured shoes</p>
         </div>
         <div class="row mx-auto container-fluid">
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured1.jpg" alt="product">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <a href="assets/html/single-product.php"><button class="buy-btn">Buy Now</button></a>
-          </div>
+
+        <?php include('server/get_shoes.php'); ?>
+
+        <?php while($row = $shoes->fetch_assoc()) { ?>
 
           <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured2.jpg" alt="product">
+            <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -168,66 +161,35 @@ include("layouts/header.php");
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
+            <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+            <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+            <a href="<?php echo "assets/html/single_product.php?product_id=". $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
           </div>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured3.jpg" alt="product">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+         <?php } ?>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured4.jpg" alt="product">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+          
+
+         
         </div>
       </section>
 
       <!-- Other parts -->
 
-      <section id="parts" class="my-5">
+           <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
-          <h3>Best Parts</h3>
-          <hr>
-          <p>Here you can check out our awazing shoes</p>
+          <h3>Our Featured</h3>
+          <hr class="mx-auto">
+          <p>Here you can check out our new featured products</p>
         </div>
         <div class="row mx-auto container-fluid">
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured1.jpg" alt="product">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+
+        <?php include('server/get_featured_products.php'); ?>
+
+        <?php while($row = $featured_products->fetch_assoc()) { ?>
 
           <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured2.jpg" alt="product">
+            <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -235,40 +197,19 @@ include("layouts/header.php");
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
+            <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+            <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+            <a href="<?php echo "assets/html/single_product.php?product_id=". $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
           </div>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured3.jpg" alt="product">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+         <?php } ?>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/images/featured4.jpg" alt="product">
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="p-name">Sports Shoes</h5>
-            <h4 class="p-price">199.8</h4>
-            <button class="buy-btn">Buy Now</button>
-          </div>
+          
+
+         
         </div>
       </section>
+
 
 <?php 
 
