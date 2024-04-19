@@ -8,6 +8,7 @@ include("../../layouts/header2.php");
 include("../../server/connection.php");
 
 if(isset($_POST["order_details_btn"]) && isset($_POST["order_id"])) {
+   
     $order_id = $_POST['order_id'];
     $order_status = $_POST['order_status'];
 
@@ -94,6 +95,7 @@ function calculateTotalOrderPrice($order_details) {
             
             if($order_status == "not paid") { ?>
                 <form style="float: right;" action="payment.php" method="POST">
+                    <input type="hidden" name="order_id" value="<?php echo $order_id; ?>" >
                     <input type="hidden" name="order_total_price" value="<?php echo $order_total_price ?>">
                     <input type="hidden" name="order_status" value="<?php echo $order_status; ?>">
                     <input class="btn btn-primary" name="order_pay_btn" type="submit" value="Pay Now">
