@@ -69,7 +69,7 @@ if(!isset($_SESSION["logged_in"])){
 
         //unset($_SESSION['cart']);
 
-
+        $_SESSION['order_id'] = $order_id;
 
         // inform user status
         header('location: ../assets/html/payment.php?order_status=Order Placed Successfuly!');

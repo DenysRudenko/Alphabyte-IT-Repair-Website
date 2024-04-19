@@ -582,3 +582,15 @@ th:last-child {
 }
 
 
+
+#paypal-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* or any other value */
+   
+    width: fit-content; /* Adjust width as necessary, or use a specific width like 300px */
+    margin: 0 auto; /* This sets the top and bottom margins to 0 and the left and right margins to auto */
+}
+  
+

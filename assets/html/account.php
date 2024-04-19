@@ -75,6 +75,11 @@ if(isset($_SESSION["logged_in"])) {
     <!-- Account -->
     <section class="my-5 py-5">
         <div class="row container mx-auto">
+
+          <?php if(isset($_GET['payment_message'])){ ?>
+            <p style="color: green;" class="mt-5 text-center"><?php echo $_GET['payment_message']; ?></p>
+            <?php } ?>
+          
             <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
            
               <p class="text-center" style="color:green">
