@@ -73,6 +73,14 @@ $products = $stmt2->get_result();
         <p class="text-center" style="color: red;"><?php echo $_GET['edit_failure_message']; ?></p>
         <?php } ?>
 
+        <?php if(isset($_GET['deleted_failure_message'])){ ?>
+        <p class="text-center" style="color: red;"><?php echo $_GET['deleted_failure_message']; ?></p>
+        <?php } ?>
+
+        <?php if(isset($_GET['deleted_successfully'])){ ?>
+        <p class="text-center" style="color: red;"><?php echo $_GET['deleted_successfully']; ?></p>
+        <?php } ?>
+
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -100,7 +108,7 @@ $products = $stmt2->get_result();
               <td><?php echo $product['product_category']; ?></td>
               <td><?php echo $product['product_color']; ?></td>
               <td><a href="edit_product.php?product_id=<?php echo $product['product_id'];?>" class="btn btn-primary">Edit</a></td>
-              <td><a class="btn btn-danger">Delete</a></td>
+              <td><a class="btn btn-danger" href="delete_product.php?product_id=<?php echo $product['product_id']; ?>">Delete</a></td>
             </tr>
 
             <?php } ?>
@@ -134,17 +142,7 @@ $products = $stmt2->get_result();
 
       </div>
     </main>
-
-
-
-    
   </div>
-
-
-
-
-
-
 </div>
 
 
