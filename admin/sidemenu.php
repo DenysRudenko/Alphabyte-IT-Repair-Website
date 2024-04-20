@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row">
+<div class="row" style="min-height: 1000px;">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
@@ -31,7 +31,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="add_new_product.php">
+            <a class="nav-link" href="add_product.php">
               <span data-feather="bar-chart-2"></span>
               Add New Product
             </a>
