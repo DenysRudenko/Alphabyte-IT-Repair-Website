@@ -36,8 +36,6 @@ if(isset($_GET['product_id'])) {
 
     }
 
-    
-
 }else {
     header('products.php');
     exit;

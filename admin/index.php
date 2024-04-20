@@ -64,6 +64,15 @@ $orders = $stmt2->get_result();
 
 
       <h2>Orders</h2>
+
+      <?php if(isset($_GET['order_updated'])){ ?>
+      <p class="text-center" style="color: green;"><?php echo $_GET['order_updated']; ?></p>
+      <?php } ?>
+
+      <?php if(isset($_GET['order_failed'])){ ?>
+      <p class="text-center" style="color: red;"><?php echo $_GET['order_failed']; ?></p>
+      <?php } ?>
+
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -88,7 +97,7 @@ $orders = $stmt2->get_result();
               <td><?php echo $order['order_date']; ?></td>
               <td><?php echo $order['user_phone']; ?></td>
               <td><?php echo $order['user_address']; ?></td>
-              <td><a class="btn btn-primary">Edit</a></td>
+              <td><a class="btn btn-primary" href="edit_order.php?order_id=<?php echo $order['order_id']; ?>" >Edit </a></td>
               <td><a class="btn btn-danger">Delete</a></td>
             </tr>
 
@@ -123,16 +132,8 @@ $orders = $stmt2->get_result();
 
       </div>
     </main>
-
-
-
     
   </div>
-
-
-
-
-
 
 </div>
 
