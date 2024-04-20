@@ -4,39 +4,43 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="index.php">
               <span data-feather="home"></span>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index.php">
               <span data-feather="file"></span>
               Orders
             </a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="products.php">
               <span data-feather="shopping-cart"></span>
               Products
             </a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
+            <a class="nav-link" href="account.php">
+              <span data-feather="layers"></span>
+              Account
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="add_new_product.php">
+              <span data-feather="bar-chart-2"></span>
+              Add New Product
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2"></span>
-              Create Product
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              Account
+              Help
             </a>
           </li>
         </ul>

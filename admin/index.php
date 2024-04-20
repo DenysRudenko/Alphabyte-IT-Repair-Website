@@ -9,6 +9,48 @@ if(!isset($_SESSION['admin_logged_in'])){
   exit();
 }
 
+
+ // Pagination
+ if(isset($_GET['page_no']) && $_GET['page_no'] != "") {
+
+  // if user has already entered page then page number is the one that selected
+  $page_no = $_GET['page_no'];
+} else {
+
+  // if user just entered the page then default page is 1
+  $page_no = 1;
+}
+
+// return number of products 
+$stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM orders ");
+
+$stmt1->execute();
+
+$stmt1->bind_result($total_records);
+
+$stmt1->store_result();
+
+$stmt1->fetch();
+
+// set the total number of products on the page
+
+$total_records_per_page = 10;
+
+$offset = ($page_no - 1) * $total_records_per_page;
+
+$previous_page = $page_no - 1;
+$next_page = $page_no + 1;
+
+$adjacents = "2";
+
+$total_number_of_pages = ceil($total_records / $total_records_per_page);
+
+// get all products
+
+$stmt2 = $conn->prepare("SELECT * FROM orders LIMIT $offset, $total_records_per_page");
+$stmt2->execute();
+$orders = $stmt2->get_result();
+
 ?>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -21,136 +63,77 @@ if(!isset($_SESSION['admin_logged_in'])){
       </div>
 
 
-      <h2>Section title</h2>
+      <h2>Orders</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+              <th scope="col">Order Id</th>
+              <th scope="col">Order Status</th>
+              <th scope="col">User Id</th>
+              <th scope="col">Order Date</th>
+              <th scope="col">User Phone</th>
+              <th scope="col">User Address</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
+
+          <?php foreach($orders as $order) {?>
             <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+              <td><?php echo $order['order_id']; ?></td>
+              <td><?php echo $order['order_status']; ?></td>
+              <td><?php echo $order['user_id']; ?></td>
+              <td><?php echo $order['order_date']; ?></td>
+              <td><?php echo $order['user_phone']; ?></td>
+              <td><?php echo $order['user_address']; ?></td>
+              <td><a class="btn btn-primary">Edit</a></td>
+              <td><a class="btn btn-danger">Delete</a></td>
             </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
+
+            <?php } ?>
+
           </tbody>
         </table>
+
+        <!-- Pagination Bar -->
+        <nav aria-label="Page navigation example">
+        <ul class="pagination mt-5 mx-auto">
+
+        <li class="page-item <?php if($page_no <= 1){ echo 'disabled'; } ?>">
+        <a class="page-link" href="<?php if($page_no > 1){ 
+          echo "?page_no=".($page_no - 1); } else { echo "#"; } ?>">Previous</a>
+        </li>
+
+            <li class="page-item"><a class="page-link" href="?page_no=1">1</a></li>
+            <li class="page-item"><a class="page-link" href="?page_no=2">2</a></li>
+
+            <?php if($page_no >= 3) { ?>
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+            <li class="page-item active"><span class="page-link"><?php echo $page_no; ?></span></li>
+            <?php } ?>
+
+
+            <li class="page-item <?php if($page_no >= $total_number_of_pages){ echo 'disabled'; } ?>">
+            <a class="page-link" href="<?php if($page_no < $total_number_of_pages){ echo "?page_no=".($page_no + 1); } else { echo "#"; } ?>">Next</a>
+            </li>
+        </ul>
+      </nav>
+
       </div>
     </main>
+
+
+
+    
   </div>
+
+
+
+
+
+
 </div>
 
 

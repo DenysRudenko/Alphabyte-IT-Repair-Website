@@ -1,6 +1,7 @@
 <?php 
 
 session_start();
+include('../server/connection.php');
 
 ?>
 
@@ -13,6 +14,7 @@ session_start();
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <title>Dashboard Template · Bootstrap v5.1</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
 
