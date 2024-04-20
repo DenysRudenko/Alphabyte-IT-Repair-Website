@@ -108,6 +108,7 @@ $products = $stmt2->get_result();
               <th scope="col">Product Offer</th>
               <th scope="col">Product Category</th>
               <th scope="col">Product Color</th>
+              <th scope="col">Edit Images</th>
               <th scope="col">Edit</th>
               <th scope="col">Delete</th>
             </tr>
@@ -123,6 +124,7 @@ $products = $stmt2->get_result();
               <td><?php echo $product['product_special_offer']."%"; ?></td>
               <td><?php echo $product['product_category']; ?></td>
               <td><?php echo $product['product_color']; ?></td>
+              <td><a href="<?php echo "edit_images.php?product_id=".$product['product_id']."&product_name=".$product['product_name'];?>" class="btn btn-warning">Edit Images</a></td>
               <td><a href="edit_product.php?product_id=<?php echo $product['product_id'];?>" class="btn btn-primary">Edit</a></td>
               <td><a class="btn btn-danger" href="delete_product.php?product_id=<?php echo $product['product_id']; ?>">Delete</a></td>
             </tr>
