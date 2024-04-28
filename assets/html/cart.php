@@ -1,7 +1,7 @@
 <?php
 // Start the session to access and manipulate session data
 
-session_start();
+
 include("../../layouts/header2.php");
 
 // Initialize the cart in session if not already set
@@ -84,6 +84,8 @@ function calculateTotalCart() {
             <th>Subtotal</th>
         </tr>
 
+        <?php if(isset($_SESSION['cart'])) { ?>
+
         <?php foreach($_SESSION['cart'] as $key => $value) { ?>
 
         <tr>
@@ -119,18 +121,18 @@ function calculateTotalCart() {
         </tr>
         
         <?php } ?>
+
+        <?php } ?>
         
     </table>
 
     <div class="cart-total">
         <table>
-            <!-- <tr>
-                <td>Subtotal</td>
-                <td>$155</td>
-            </tr> -->
             <tr>
                 <td>Total</td>
+                <?php if(isset($_SESSION['cart'])) { ?>
                 <td>$ <?php echo $_SESSION['total']; ?></td>
+                <?php } ?>
             </tr>
         </table>
     </div>
