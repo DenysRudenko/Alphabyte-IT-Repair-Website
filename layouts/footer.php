@@ -4,18 +4,17 @@
         <div class="row container mx-auto pt-5">
           <div class="footer-one col-lg-3 col-md-6 col-sm-12">
             <img class="logo" src="assets/images/logo.png" alt="logo">
-            <p class="pt-3">We provide the best products for your computer</p>
+            <p class="pt-3">Your Trasted Partners in IT Repair and Support</p>
           </div>
 
           <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <h5 class="pb-2">Featured</h5>
+            <h5 class="pb-2">Menu</h5>
             <ul class="text-uppercase">
-              <li><a href="">men</a></li>
-              <li><a href="">woman</a></li>
-              <li><a href="">boys</a></li>
-              <li><a href="">girls</a></li>
-              <li><a href="">new arrivals</a></li>
-              <li><a href="">clothes</a></li>
+              <li><a href="index.php">Home</a></li>
+              <li><a href="assets/html/shop.php">Shop</a></li>
+              <li><a href="assets/html/contact.php">Contact Us</a></li>
+              <li><a href="assets/html/account.php">Account</a></li>
+              <li><a href="assets/html/cart.php">Cart</a></li>
             </ul>
           </div>
 
@@ -39,13 +38,17 @@
           </div>
 
           <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-            <h5 class="pb-2">Instagram</h5>
+            <h5 class="pb-2">Partners</h5>
             <div class="row">
-              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured2.jpg" alt="image">
-              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured4.jpg" alt="image">
-              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured3.jpg" alt="image">
-              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured2.jpg" alt="image">
-              <img class="image-fluid w-25 h-100 m-2" src="assets/images/featured1.jpg" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/asus.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/intel.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/nvidia.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/hp.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/gigabyte.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/dell.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/windows.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/linux.png" alt="image">
+              <img class="image-fluid w-25 h-90 m-2" src="assets/images/mac.png" alt="image">
             </div>
           </div>
         </div>
@@ -61,9 +64,9 @@
               <p>ECommerce @ 2024 All Rights Reserved</p>
             </div>
             <div class="col-lg-3 col-md-5 col-sm-12 mb-4">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
         </div>

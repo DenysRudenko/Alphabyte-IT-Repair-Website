@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 include("../../layouts/header2.php");
 
 if(isset($_POST['order_pay_btn'])) {

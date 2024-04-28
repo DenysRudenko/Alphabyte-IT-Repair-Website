@@ -1,7 +1,5 @@
 <?php 
 
-session_start();
-
 include("../../layouts/header2.php");
 include("../../server/connection.php");
 

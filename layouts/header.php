@@ -21,10 +21,9 @@ session_start();
   
     <header>
      <!-- Navigation bar Bootstrap -->
-     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+     <nav class="navbar navbar-expand-lg navbar-light py-3 fixed-top">
         <div class="container">
-          <img class="logo" src="assets/images/logo.png" alt="logotype">
-          <h2 class="brand">Solutions</h2>
+          <h2 class="brand color-span">AlphaByte Solutions</h2>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -37,9 +36,6 @@ session_start();
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="assets/html/shop.php">Shop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="assets/html/contact.php">Contact Us</a>

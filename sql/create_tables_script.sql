@@ -38,13 +38,18 @@ CREATE TABLE IF NOT EXISTS `orders` (
 CREATE TABLE IF NOT EXISTS `order_items` (
   `item_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL, -- Corrected data type to int(11) to match the products table
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL, -- Added to store product name
+  `product_image` varchar(255) NOT NULL, -- Added to store image URL or path
   `product_price` decimal(6,2) NOT NULL,
-  `product_quantity` int(4) NOT NULL,
+  `product_quantity` int(11) NOT NULL, -- Modified to int(11) for consistency
+  `user_id` int(11) NOT NULL, -- Added to link to a user
+  `order_date` datetime NOT NULL, -- Added to store the date of the order
   PRIMARY KEY (`item_id`),
   FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE,
   FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB CHARSET=latin1;
+
 
 CREATE TABLE IF NOT EXISTS payments (
   payment_id int(11) NOT NULL AUTO_INCREMENT,

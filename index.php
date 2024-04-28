@@ -6,50 +6,77 @@ include("layouts/header.php");
    
       <!-- Home -->
       <section id="home">
-        <div class="container">
-          <h5>NEW ARRIVALS</h5>
-          <h1><span>Best Prices</span> This Season</h1>
-          <p>Eshop offers the best products for the most affordable prices</p>
+        <div class="container text-effect">
+          <h5>LATEST SERVICES</h5>
+          <h1><span>Unbeatable</span> Repair Deals This Season</h1>
+          <p>Alphabyte Solutions offers expert computer repairs at the most competitive prices.</p>
           <button>Shop Now</button>
         </div>
       </section>
 
       <!-- Brand -->
-      <section id="brand" class="container">
-        <div class="row">
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand1.png" alt="brand">
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand2.png" alt="brand">
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand3.jpg" alt="brand">
-          <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/brand4.png" alt="brand">
+
+      <!-- container in class -->
+      <section id="brand" class=""> 
+        <div class="service-features">
+        
+          <div class="feature-item ">
+            <img class="feature-icon img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/P.svg" alt="brand">
+            <div>
+            <h3 class="feature-text"><span>P</span>remuim Quality</h3>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <img class="feature-icon img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/T.svg" alt="brand">
+            <div>
+            <h3 class="feature-text"><span>G</span>uaranteed Return / Warranty</h3>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <img class="feature-icon img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/E.svg" alt="brand">
+            <div>
+            <h3 class="feature-text"><span>T</span>echnical Support</h3>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <img class="feature-icon img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/images/S.svg" alt="brand">
+            <div>
+            <h3 class="feature-text"><span>H</span>ighly Professional</h3>
+            </div>
+          </div>
         </div>
       </section>
+
 
       <!-- New -->
       <section id="new" class="w-100">
         <div class="row p-0 m-0">
           <!-- One -->
           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="assets/images/1.jpg" alt="">
+            <img class="img-fluid" src="assets/images/asus_product.webp" alt="">
             <div class="details">
-              <h2>Extreamely Awesome Shoes</h2>
+              <h2>Graphics Processing Power</h2>
               <button class="text-uppercase">Shop Now</button>
             </div>
           </div>
           
           <!-- Two -->
           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="assets/images/2.jpeg" alt="">
+            <img class="img-fluid" src="assets/images/amd_product.webp" alt="">
             <div class="details">
-              <h2>Awesome Jacket</h2>
+              <h2>Processors for Computing</h2>
               <button class="text-uppercase">Shop Now</button>
             </div>
           </div>
           
           <!-- Three -->
           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-            <img class="img-fluid" src="assets/images/3.jpg" alt="">
+            <img class="img-fluid" src="assets/images/gigabyte_product.webp" alt="">
             <div class="details">
-              <h2>50% OFF Watches</h2>
+              <h2>Mainboards for Peak Performance</h2>
               <button class="text-uppercase">Shop Now</button>
             </div>
           </div>
@@ -59,9 +86,9 @@ include("layouts/header.php");
       <!-- Featured -->
       <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
-          <h3>Our Featured</h3>
-          <hr class="mx-auto">
-          <p>Here you can check out our new featured products</p>
+          <h3>GPUs</h3>
+          <hr class="mx-auto color-span">
+          <p>Explore our latest selection of high-end GPUs, designed for the ultimate gaming and graphics experience.</p>
         </div>
         <div class="row mx-auto container-fluid">
 
@@ -95,9 +122,9 @@ include("layouts/header.php");
 
       <section id="banner" class="my-5 py-5">
         <div class="container">
-          <h4>MID SEASON SALE</h4>
-          <h1>Autumn Collection <br> UP to 30% OFF</h1>
-          <button class="text-uppercase">Shop Now</button>
+          <h4>SEASONAL PROMOTION</h4>
+          <h1>Tech Essentials Fall Line-Up <br> SAVE UP TO 30%</h1>
+          <button class="text-uppercase">Start Shopping</button>
         </div>
       </section>
 
@@ -105,9 +132,9 @@ include("layouts/header.php");
 
       <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
-          <h3>Our Featured</h3>
+          <h3>CPUs</h3>
           <hr class="mx-auto">
-          <p>Here you can check out our new featured watches</p>
+          <p>Discover our newly showcased CPUs, engineered for cutting-edge computing power and efficiency.</p>
         </div>
         <div class="row mx-auto container-fluid">
 
@@ -142,9 +169,9 @@ include("layouts/header.php");
 
       <section id="featured" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
-          <h3>Our Featured</h3>
+          <h3>Motherboards</h3>
           <hr class="mx-auto">
-          <p>Here you can check out our new featured shoes</p>
+          <p>Browse our latest lineup of premium motherboards, the foundation for building high-performance systems.</p>
         </div>
         <div class="row mx-auto container-fluid">
 
