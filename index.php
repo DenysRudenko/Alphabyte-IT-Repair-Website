@@ -119,9 +119,6 @@ include("layouts/header.php");
           </div>
 
          <?php } ?>
-
-          
-
          
         </div>
       </section>
@@ -241,12 +238,9 @@ include("layouts/header.php");
 
          <?php } ?>
 
-          
 
-         
         </div>
       </section>
-
 
 <?php 
 
