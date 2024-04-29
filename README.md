@@ -95,3 +95,52 @@ To get access to tests page in your search bar type: localhost:8000/tests/valida
 https://github.com/DenysRudenko/Alphabyte-IT-Repair-Website
 
 #### All other code sourced through Web-development server-side Moodle
+
+
+## Ryan
+
+### Assets:
+
+payment.php, register.php, shop.php, single_product.php
+
+### Server: 
+
+Complete_payment.php, Connection.php, get_featured_products.php, Get_products.php, ge_shoes.php, get_watches.php, place_order.php
+
+## Fergal
+
+### Assets: 
+
+Account.php, Cart.php, Checkout.php, Contact.php,Login.php, Order_details.php
+
+### Layouts:
+
+Footer.php, Footer2.php, header.php, header2.php
+
+### CSS: 
+
+Signin.css
+
+### SQL: 
+
+insert_script1.sql
+
+## Denys
+
+### Admin: 
+
+account.php, add_product.php, create_product.php, delete_product.php, edit_images.php, edit_order.php, edit_product.php, header.php, help.php, index.php, login.php, logout.php, products.php, sidemenu.php, update_images.php
+
+### Css: 
+
+Style.css
+
+### SQL: 
+
+create_tables_script.sql
+
+### Index.php: All collaborators 
+
+
+
+
