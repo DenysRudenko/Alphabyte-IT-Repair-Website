@@ -29,25 +29,25 @@
 
             <div  class="col-lg-5 col-md-6 col-sm-12">
                 <img id="mainImg" class="img-fluid w-100 pb-1" src="../images/<?php echo $row['product_image']; ?>" alt="image">
-                <div class="small-img-group">
+                <div class="product-img-group small-img-group">
                     <div class="small-img-col">
-                        <img class="small-img" src="../images/<?php echo $row['product_image']; ?>" width="100%" alt="image">
+                        <img class="small-img" src="../images/<?php echo $row['product_image']; ?>" width="100%"  alt="image">
                     </div>
-                    <div class="small-img-col">
+                    <div class="pruduct-img-col small-img-col">
                         <img class="small-img" src="../images/<?php echo $row['product_image2']; ?>" width="100%" alt="image">
                     </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="../images/<?php echo $row['product_image3']; ?>" width="100%" alt="image">
+                    <div class="pruduct-img-col small-img-col">
+                        <img class="small-img" src="../images/<?php echo $row['product_image3']; ?>" width="100%"  alt="image">
                     </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="../images/<?php echo $row['product_image4']; ?>" width="100%" alt="image">
+                    <div class="pruduct-img-col small-img-col">
+                        <img class="small-img" src="../images/<?php echo $row['product_image4']; ?>" width="100%"  alt="image">
                     </div>
                 </div>
             </div>
 
               
-            <div class="col-lg-6 col-md-12 col-12">
-                <h6>Men/Shoes</h6>
+            <div class="col-lg-6 col-md-12 col-12 ">
+                <h6><?php echo $row['product_category']; ?></h6>
                 <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
                 <h2>$<?php echo $row['product_price']; ?></h2>
 
@@ -80,65 +80,30 @@
    
     </div>
     <div class="row mx-auto container-fluid">
-      <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <img class="img-fluid mb-3" src="../images/featured1.jpg" alt="product">
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h5 class="p-name">Sports Shoes</h5>
-        <h4 class="p-price">199.8</h4>
-        <button class="buy-btn">Buy Now</button>
-      </div>
+    <?php include('../../server/get_shoes.php'); ?>
 
-      <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <img class="img-fluid mb-3" src="../images/featured2.jpg" alt="product">
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h5 class="p-name">Sports Shoes</h5>
-        <h4 class="p-price">199.8</h4>
-        <button class="buy-btn">Buy Now</button>
-      </div>
+    <?php while($row = $shoes->fetch_assoc()) { ?>
 
-      <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <img class="img-fluid mb-3" src="../images/featured3.jpg" alt="product">
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h5 class="p-name">Sports Shoes</h5>
-        <h4 class="p-price">199.8</h4>
-        <button class="buy-btn">Buy Now</button>
-      </div>
-
-      <div onclick="window.location.href='single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <img class="img-fluid mb-3" src="../images/featured4.jpg" alt="product">
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h5 class="p-name">Sports Shoes</h5>
-        <h4 class="p-price">199.8</h4>
-        <button class="buy-btn">Buy Now</button>
-      </div>
+  <div onclick="window.location.href='single_product.php?product_id=<?php echo $row['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+    <img class="img-fluid mb-3" src="../images/<?php echo $row['product_image']; ?>" alt="product">
+    <div class="star">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
     </div>
+    <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
+    <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+    <a href="<?php echo "single_product.php?product_id=". $row['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+  </div>
+
+  <?php } ?>
+
+  </div>
   </section>
 
-
+  
 <script>
     
     var mainImg = document.getElementById("mainImg");

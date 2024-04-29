@@ -10,7 +10,9 @@ include("layouts/header.php");
           <h5>LATEST SERVICES</h5>
           <h1><span>Unbeatable</span> Repair Deals This Season</h1>
           <p>Alphabyte Solutions offers expert computer repairs at the most competitive prices.</p>
-          <button>Shop Now</button>
+          <a href="assets/html/shop.php"> <!-- Replace 'shop_page.php' with the actual page you want to link to -->
+            <button class="text-uppercase">Explore</button>
+          </a>
         </div>
       </section>
 
@@ -59,7 +61,9 @@ include("layouts/header.php");
             <img class="img-fluid" src="assets/images/asus_product.webp" alt="">
             <div class="details">
               <h2>Graphics Processing Power</h2>
-              <button class="text-uppercase">Shop Now</button>
+              <a href="#featured gpu"> 
+                <button class="text-uppercase">Shop Now</button>
+              </a>
             </div>
           </div>
           
@@ -68,7 +72,9 @@ include("layouts/header.php");
             <img class="img-fluid" src="assets/images/amd_product.webp" alt="">
             <div class="details">
               <h2>Processors for Computing</h2>
-              <button class="text-uppercase">Shop Now</button>
+              <a href="#featured cpu"> 
+                <button class="text-uppercase">Shop Now</button>
+              </a>
             </div>
           </div>
           
@@ -77,14 +83,16 @@ include("layouts/header.php");
             <img class="img-fluid" src="assets/images/gigabyte_product.webp" alt="">
             <div class="details">
               <h2>Mainboards for Peak Performance</h2>
-              <button class="text-uppercase">Shop Now</button>
+              <a href="#featured motherboard"> 
+                <button class="text-uppercase">Shop Now</button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Featured -->
-      <section id="featured" class="my-5 pb-5">
+      <section id="featured gpu" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
           <h3>GPUs</h3>
           <hr class="mx-auto color-span">
@@ -96,7 +104,7 @@ include("layouts/header.php");
 
         <?php while($row = $featured_products->fetch_assoc()) { ?>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.php?product_id=<?php echo $row['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -120,17 +128,28 @@ include("layouts/header.php");
     
       <!-- Banner -->
 
-      <section id="banner" class="my-5 py-5">
+      <!-- <section id="banner" class="my-5 py-5">
         <div class="container">
           <h4>SEASONAL PROMOTION</h4>
           <h1>Tech Essentials Fall Line-Up <br> SAVE UP TO 30%</h1>
           <button class="text-uppercase">Start Shopping</button>
         </div>
+      </section> -->
+
+      <section id="banner" class="my-5 py-5">
+        <div class="container">
+          <h4>SEASONAL PROMOTION</h4>
+          <h1>Tech Essentials Fall Line-Up <br> SAVE UP TO 30%</h1>
+          <!-- Wrap button with an anchor tag pointing to the shop page -->
+          <a href="assets/html/shop.php"> <!-- Replace 'shop_page.php' with the actual page you want to link to -->
+            <button class="text-uppercase">Start Shopping</button>
+          </a>
+        </div>
       </section>
 
       <!-- CPUS -->
 
-      <section id="featured" class="my-5 pb-5">
+      <section id="featured cpu" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
           <h3>CPUs</h3>
           <hr class="mx-auto">
@@ -142,7 +161,7 @@ include("layouts/header.php");
 
         <?php while($row = $watches->fetch_assoc()) { ?>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.php?product_id=<?php echo $row['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -165,9 +184,9 @@ include("layouts/header.php");
       </section>
 
 
-      <!-- GPUS -->
+      <!-- Motherboards -->
 
-      <section id="featured" class="my-5 pb-5">
+      <section id="featured motherboard" class="my-5 pb-5">
         <div class="container text-center mt-5 py-5">
           <h3>Motherboards</h3>
           <hr class="mx-auto">
@@ -179,7 +198,7 @@ include("layouts/header.php");
 
         <?php while($row = $shoes->fetch_assoc()) { ?>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.php?product_id=<?php echo $row['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
@@ -215,7 +234,7 @@ include("layouts/header.php");
 
         <?php while($row = $featured_products->fetch_assoc()) { ?>
 
-          <div onclick="window.location.href='assets/html/single_product.html';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <div onclick="window.location.href='assets/html/single_product.php?product_id=<?php echo $row['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
             <img class="img-fluid mb-3" src="assets/images/<?php echo $row['product_image']; ?>" alt="product">
             <div class="star">
               <i class="fas fa-star"></i>
