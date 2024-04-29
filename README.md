@@ -90,4 +90,8 @@ To get access to tests page in your search bar type: localhost:8000/tests/valida
 ## index.php
 • Main image https://www.joberty.com/blog/games-to-learn-linux/
 
+## GitHub 
+
+https://github.com/DenysRudenko/Alphabyte-IT-Repair-Website
+
 #### All other code sourced through Web-development server-side Moodle
