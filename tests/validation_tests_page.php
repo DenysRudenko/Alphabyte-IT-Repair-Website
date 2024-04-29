@@ -4,6 +4,7 @@
 include("validation.php");
 
 // Initialize output variables
+
 $login_output = "";
 $orders_output = "";
 $cart_output = "";

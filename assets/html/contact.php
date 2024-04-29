@@ -14,7 +14,7 @@ include("../../layouts/header2.php");
                Phone number: <span>123 456 789</span>
              </p>
              <p class="w-50 mx-auto">
-                Email address: <span>info@email.com</span>
+                Email address: <span>alphabyterepair@gmail.com</span>
               </p>
               <p class="w-50 mx-auto">
                 We work 24/7 to answer your questions
