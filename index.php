@@ -10,7 +10,7 @@ include("layouts/header.php");
           <h5>LATEST SERVICES</h5>
           <h1><span>Unbeatable</span> Repair Deals This Season</h1>
           <p>Alphabyte Solutions offers expert computer repairs at the most competitive prices.</p>
-          <a href="assets/html/shop.php"> <!-- Replace 'shop_page.php' with the actual page you want to link to -->
+          <a href="assets/html/shop.php"> 
             <button class="text-uppercase">Explore</button>
           </a>
         </div>
@@ -126,22 +126,13 @@ include("layouts/header.php");
         </div>
       </section>
     
-      <!-- Banner -->
-
-      <!-- <section id="banner" class="my-5 py-5">
-        <div class="container">
-          <h4>SEASONAL PROMOTION</h4>
-          <h1>Tech Essentials Fall Line-Up <br> SAVE UP TO 30%</h1>
-          <button class="text-uppercase">Start Shopping</button>
-        </div>
-      </section> -->
 
       <section id="banner" class="my-5 py-5">
         <div class="container">
           <h4>SEASONAL PROMOTION</h4>
           <h1>Tech Essentials Fall Line-Up <br> SAVE UP TO 30%</h1>
-          <!-- Wrap button with an anchor tag pointing to the shop page -->
-          <a href="assets/html/shop.php"> <!-- Replace 'shop_page.php' with the actual page you want to link to -->
+        
+          <a href="assets/html/shop.php"> 
             <button class="text-uppercase">Start Shopping</button>
           </a>
         </div>
