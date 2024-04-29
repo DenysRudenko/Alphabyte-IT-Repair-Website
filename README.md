@@ -87,4 +87,7 @@ To get access to tests page in your search bar type: localhost:8000/tests/valida
 
 •	Window alert(): https://www.w3schools.com
 
+## index.php
+• Main image https://www.joberty.com/blog/games-to-learn-linux/
+
 #### All other code sourced through Web-development server-side Moodle
