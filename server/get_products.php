@@ -4,7 +4,7 @@
 include('connection.php');
 
 // Database Querry 
-$stmt = $conn->prepare("SELECT * FROM products WHERE product_category='coats' LIMIT 4");
+$stmt = $conn->prepare("SELECT * FROM products WHERE product_category='gpus' LIMIT 4");
 
 // Run the querry
 $stmt->execute();

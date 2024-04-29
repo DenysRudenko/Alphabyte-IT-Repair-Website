@@ -91,7 +91,6 @@ if(isset($_POST['search'])){
 }
 ?>
 
-
    <!-- search -->
    <section id="search" class="my-5 py-5 ms-2">
     <div class="container mt-5 py-5">
@@ -105,30 +104,23 @@ if(isset($_POST['search'])){
 
         <p>Category</p>
         <div class="form-check">
-          <input id="category_one" value="shoes" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'shoes'){echo 'checked'; } ?>>
+          <input id="category_one" value="motherboards" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'motherboards'){echo 'checked'; } ?>>
           <label for="category_one" class="form-check-label">
-            Shoes
+            Motherboards
           </label>
         </div>
 
         <div class="form-check">
-          <input id="category_two" value="coats" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'coats'){echo 'checked'; } ?>>
+          <input id="category_two" value="gpus" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'gpus'){echo 'checked'; } ?>>
           <label for="category_two" class="form-check-label">
-            Coats
+            GPUs
           </label>
         </div>
 
         <div class="form-check">
-          <input id="category_three" value="watches" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'watches'){echo 'checked'; } ?>>
+          <input id="category_three" value="cpus" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'cpus'){echo 'checked'; } ?>>
           <label for="category_three" class="form-check-label">
-            Watches
-          </label>
-        </div>
-
-        <div class="form-check">
-          <input id="category_four" value="bags" class="form-check-input" name="category" type="radio" <?php if(isset($category) && $category == 'bags'){echo 'checked'; } ?>>
-          <label for="category_four" class="form-check-label">
-            Bags
+            CPUs
           </label>
         </div>
 
@@ -165,7 +157,7 @@ if(isset($_POST['search'])){
         
     <?php while($row = $products->fetch_assoc()) { ?>
 
-      <div onclick="window.location.href='single_product.php';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+      <div onclick="window.location.href='single_product.php?product_id=<?php echo $row['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
         <img class="img-fluid mb-3" src="../images/<?php echo $row['product_image']; ?>" alt="product">
         <div class="star">
           <i class="fas fa-star"></i>

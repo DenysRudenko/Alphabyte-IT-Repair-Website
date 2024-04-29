@@ -303,6 +303,8 @@ hr {
     background-color: #fb774b;
 }
 
+
+
 .star {
     padding: 10px 0;
 }
@@ -416,7 +418,7 @@ footer .copyright img {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: textclip 2s linear infinite;
+    animation: textclip 8s linear infinite;
     display: inline-block;
 }
 
@@ -442,6 +444,27 @@ footer .copyright img {
     padding-left: 10px;
     font-size: 16px;
     margin-right: 10px;
+}
+
+.single-product h4 {
+    position: relative; 
+    padding-left: 0px; 
+    padding-bottom: 0px;
+}
+
+.single-product h4::after {
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom: -10px;
+    width: 150px; 
+    height: 2px; 
+    background-color: coral;
+    display: block;
+}
+
+.single-product span {
+    color: #fff;
 }
 
 .single-product input:focus {
@@ -470,6 +493,10 @@ footer .copyright img {
     flex-wrap: wrap;
 }
 
+.cart {
+    color: #fff;
+}
+
 .cart th {
     text-align: left;
     padding: 5px 10px;
@@ -480,6 +507,8 @@ footer .copyright img {
 .cart td {
     padding: 10px 20px;
 }
+
+
 
 .cart td img {
     width: 80px;
@@ -510,8 +539,7 @@ footer .copyright img {
     color: #fb774b;
     text-decoration: none;
     font-size: 15px;
-    background-color: #fff;
-    border: none;
+
 }
 
 .cart .product-info p {
@@ -630,6 +658,10 @@ th:last-child {
     border-collapse: collapse;
 }
 
+#orders table span {
+    color: #fff;
+}
+
 .orders .product-info {
     display: flex;
     flex-wrap: wrap;
@@ -697,15 +729,19 @@ th:last-child {
     float: left;
 }
 
+#search span {
+    color: #fff;
+}
+
 
 #paypal-button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* or any other value */
+    height: 100%;
    
-    width: fit-content; /* Adjust width as necessary, or use a specific width like 300px */
-    margin: 0 auto; /* This sets the top and bottom margins to 0 and the left and right margins to auto */
+    width: fit-content;
+    margin: 0 auto; 
 }
 
 .cart-quantity {
