@@ -27,14 +27,17 @@ if(isset($_POST['change_password'])) {
   $user_email = $_SESSION['user_email'];
 
   // if passwords dont match
+
   if($password !== $confirmPassword){
     header('location: account.php?error=Password dont match!');
   
   // if passwords is less than 6 chars
+
   } else if(strlen($password) < 6){
     header('location: account.php?error=Password must be at least 6 characters!');
     
     // no errors
+
   } else {
     
     $stmt = $conn->prepare(
@@ -51,6 +54,7 @@ if(isset($_POST['change_password'])) {
 }
 
 // get orders
+
 if(isset($_SESSION["logged_in"])) {
   $user_id = $_SESSION['user_id'];
 
@@ -59,9 +63,11 @@ if(isset($_SESSION["logged_in"])) {
   $stmt->bind_param("i", $user_id);
 
   // Run the querry
+
   $stmt->execute();
   
   // Get results and add them to stmt variable
+
   $orders = $stmt->get_result();
 
   }
@@ -130,6 +136,7 @@ if(isset($_SESSION["logged_in"])) {
     </section>
   
     <!-- Orders -->
+
     <section id="orders" class="orders container my-5 py-3">
         <div class="container mt-2">
             <h2 class="font-weight-bold text-center">Your Orders</h2>
@@ -175,8 +182,7 @@ if(isset($_SESSION["logged_in"])) {
                 </tr>
 
               <?php } ?>
-           
-           
+     
         </table>  
        </section>
 

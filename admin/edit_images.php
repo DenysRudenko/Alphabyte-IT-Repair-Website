@@ -12,7 +12,6 @@ if(isset($_GET['product_id'])){
 
 ?>
 
-
 <div class="container-fluid">
   <div class="row" style="min-height: 1000px;">
     <?php include('sidemenu.php'); ?>
@@ -22,7 +21,6 @@ if(isset($_GET['product_id'])){
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <!-- Buttons can go here -->
           </div>
         </div>
       </div>
@@ -30,7 +28,6 @@ if(isset($_GET['product_id'])){
 
 <h2>Update Product Images</h2>
       <div class="table-responsive">
-        <!-- Table goes here -->
 
   <div class="mx-auto container">
   <form id="edit-image-form" enctype="multipart/form-data" method="POST" action="update_images.php">

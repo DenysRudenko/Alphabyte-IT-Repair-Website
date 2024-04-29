@@ -1,6 +1,5 @@
 <?php
 
-
 include("../../layouts/header2.php");
 
 if( !empty($_SESSION["cart"])) {

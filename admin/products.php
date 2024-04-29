@@ -11,17 +11,21 @@ if(!isset($_SESSION['admin_logged_in'])){
 
 
  // Pagination
+
  if(isset($_GET['page_no']) && $_GET['page_no'] != "") {
 
   // if user has already entered page then page number is the one that selected
+
   $page_no = $_GET['page_no'];
 } else {
 
   // if user just entered the page then default page is 1
+
   $page_no = 1;
 }
 
 // return number of products 
+
 $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM products ");
 
 $stmt1->execute();

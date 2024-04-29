@@ -1,6 +1,6 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
 
-<?php
+
 if(!isset($_SESSION['admin_logged_in'])){
     header('Location: login.php');
     exit();
@@ -12,7 +12,6 @@ if(!isset($_SESSION['admin_logged_in'])){
 
     <?php include('sidemenu.php'); ?>
     
-
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Help</h1>
@@ -25,10 +24,10 @@ if(!isset($_SESSION['admin_logged_in'])){
 
 
 <div class="container">
+
   <p>Please contact admin@email.com</p>
   <p>Please call 12345678</p>
  
-  <!-- More content can be added here -->
 </div>
 
   </div>

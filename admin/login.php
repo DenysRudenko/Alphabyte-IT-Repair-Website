@@ -25,6 +25,7 @@ if(isset($_POST["login_btn"])){
     $stmt->store_result();
     
     if($stmt->num_rows() == 1){
+
       $stmt->fetch();
       
       $_SESSION['admin_id'] = $admin_id;
@@ -66,9 +67,6 @@ if(isset($_POST["login_btn"])){
     </div>
   </form>
 </div>
-
-
-
     
   </body>
 </html>

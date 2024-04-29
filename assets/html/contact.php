@@ -4,7 +4,6 @@ include("../../layouts/header2.php");
 
 ?>
 
-
    <!-- Contact -->
 
    <section id="contact" class="container my-5 py-5">
@@ -23,7 +22,6 @@ include("../../layouts/header2.php");
         </div>
    </section>
 
-   
 <?php
 
 include("../../layouts/footer2.php");
