@@ -12,13 +12,16 @@ if(isset($_POST['create_product'])){
     $product_color = $_POST['color'];
 
     // this is the image otself
+
     $image1 = $_FILES['image1']['tmp_name'];
     $image2 = $_FILES['image2']['tmp_name'];
     $image3 = $_FILES['image3']['tmp_name'];
     $image4 = $_FILES['image4']['tmp_name'];
+
     // $file_name = $_FILES['image1']['name'];
 
     // image names
+
     $image_name1 = $product_name . "_1.jpeg";
     $image_name2 = $product_name . "_2.jpeg";
     $image_name3 = $product_name . "_3.jpeg";
@@ -30,6 +33,7 @@ if(isset($_POST['create_product'])){
     move_uploaded_file($image4, "../assets/images/" . $image_name4);
     
     //create a new user
+    
     $stmt = $conn->prepare("INSERT INTO products (product_name, product_description, 
     product_price, product_special_offer, product_image, product_image2, 
     product_image3, product_image4, product_category, product_color)

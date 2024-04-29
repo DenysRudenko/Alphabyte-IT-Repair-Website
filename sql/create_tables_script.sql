@@ -24,10 +24,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_amount` decimal(10,2) NOT NULL,  -- Changed column name to order_amount
+  `order_amount` decimal(10,2) NOT NULL,
   `order_status` varchar(100) NOT NULL DEFAULT 'on_hold',
   `user_id` int(11) NOT NULL,
-  `user_phone` varchar(15) NOT NULL, -- Kept as VARCHAR for international formats
+  `user_phone` varchar(15) NOT NULL,
   `user_city` varchar(255) NOT NULL,
   `user_address` varchar(255) NOT NULL,
   `order_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -39,12 +39,12 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `item_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL, -- Added to store product name
-  `product_image` varchar(255) NOT NULL, -- Added to store image URL or path
+  `product_name` varchar(255) NOT NULL,
+  `product_image` varchar(255) NOT NULL,
   `product_price` decimal(6,2) NOT NULL,
-  `product_quantity` int(11) NOT NULL, -- Modified to int(11) for consistency
-  `user_id` int(11) NOT NULL, -- Added to link to a user
-  `order_date` datetime NOT NULL, -- Added to store the date of the order
+  `product_quantity` int(11) NOT NULL, 
+  `user_id` int(11) NOT NULL, 
+  `order_date` datetime NOT NULL,
   PRIMARY KEY (`item_id`),
   FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`) ON DELETE CASCADE,
   FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE

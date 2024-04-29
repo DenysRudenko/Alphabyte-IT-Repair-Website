@@ -1,18 +1,19 @@
 <?php
-// Start the session to access and manipulate session data
-
 
 include("../../layouts/header2.php");
 
 // Initialize the cart in session if not already set
+
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
 if (isset($_POST['add_to_cart'])) {
+
     $products_array_ids = array_column($_SESSION['cart'], 'product_id');
 
     if (!in_array($_POST['product_id'], $products_array_ids)) {
+
         $product_array = [
             'product_id' => $_POST['product_id'],
             'product_name' => $_POST['product_name'],
@@ -22,6 +23,7 @@ if (isset($_POST['add_to_cart'])) {
         ];
 
         $_SESSION['cart'][$_POST['product_id']] = $product_array;
+
         calculateTotalCart(); // Recalculate cart total after adding
     } else {
         echo '<script>alert("Product was already added!");</script>';
@@ -30,15 +32,21 @@ if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
 
     if (isset($_SESSION['cart'][$product_id])) {
+
         unset($_SESSION['cart'][$product_id]);
+
         calculateTotalCart(); // Recalculate cart total after removal
     }
+
 } elseif (isset($_POST['edit_quantity'])) {
+
     $product_id = $_POST['product_id'];
     $product_quantity = $_POST['product_quantity'];
 
     if (isset($_SESSION['cart'][$product_id])) {
+
         $_SESSION['cart'][$product_id]['product_quantity'] = $product_quantity;
+
         calculateTotalCart(); // Recalculate cart total after editing
     }
 } else {
@@ -67,7 +75,6 @@ function calculateTotalCart() {
 }
 
 ?>
-
 
    <!-- Cart -->
 

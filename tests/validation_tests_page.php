@@ -1,5 +1,6 @@
 <?php
 // Include the validation functions
+
 include("validation.php");
 
 // Initialize output variables
@@ -64,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Validation Tests Page</title>
-    <!-- Add custom CSS styling here if needed -->
 </head>
 
 <body>
@@ -86,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <div id="login_output">
-            <!-- Output of the PHP script for the login test -->
             <p style="color: green;">
                 <?php echo $login_output; ?>
             </p>
@@ -110,7 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <div id="orders_output">
-            <!-- Output of the PHP script for the orders test -->
             <p style="color: green;">
                 <?php echo $orders_output; ?>
             </p>
@@ -168,11 +166,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </section>
 
 
-
-
-
-
-
 <section class="my-5 py-5">
     <div class="container text-center mt-3 pt-5">
         <h2>Cart Test</h2>
@@ -196,7 +189,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- Output for cart operations -->
         <div id="cart_output">
-            <!-- Output of the PHP script for the cart operations -->
             <p style="color: green;">
                 <?php echo $cart_output; ?>
             </p>
@@ -204,8 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </section>
 
-
-
 </body>
 
 </html>
+

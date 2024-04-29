@@ -5,23 +5,30 @@ include('header.php');
 include('sidemenu.php');
 
 if(!isset($_SESSION['admin_logged_in'])){
+
   header('location: login.php');
+
   exit();
 }
 
 
  // Pagination
+
  if(isset($_GET['page_no']) && $_GET['page_no'] != "") {
 
   // if user has already entered page then page number is the one that selected
+
   $page_no = $_GET['page_no'];
+
 } else {
 
   // if user just entered the page then default page is 1
+
   $page_no = 1;
 }
 
 // return number of products 
+
 $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM orders ");
 
 $stmt1->execute();
@@ -107,6 +114,7 @@ $orders = $stmt2->get_result();
         </table>
 
         <!-- Pagination Bar -->
+
         <nav aria-label="Page navigation example">
         <ul class="pagination mt-5 mx-auto">
 
@@ -136,7 +144,6 @@ $orders = $stmt2->get_result();
   </div>
 
 </div>
-
 
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

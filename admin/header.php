@@ -1,6 +1,7 @@
 <?php 
 
 session_start();
+
 include('../server/connection.php');
 
 ?>
@@ -51,6 +52,7 @@ include('../server/connection.php');
 
     
     <!-- Custom styles for this template -->
+    
     <link href="dashboard.css" rel="stylesheet">
   </head>
   <body>

@@ -4,6 +4,7 @@ include("../../layouts/header2.php");
 include('../../server/connection.php');
 
   // if user alredy registrated, then take user to account page
+
 if(isset($_SESSION['logged_in'])){
   header('location: account.php');
   exit;
@@ -29,9 +30,11 @@ if(isset($_POST["register"])){
   
 
   // if there is no error
+
   } else {
 
       // check the user with email or not
+
       $stmt1 = $conn->prepare('SELECT COUNT(*) FROM users WHERE user_email=?');
       $stmt1->bind_param('s', $email);
       $stmt1->execute();
@@ -40,19 +43,23 @@ if(isset($_POST["register"])){
       $stmt1->fetch();
 
       // if there is a user with already registered with this email
+
       if($num_rows != 0){
         header('location: register.php?error=User with this email already exists!');
 
         // if no user registrated with this email
+
       } else {
      
         // create a new user
+
         $stmt = $conn->prepare('INSERT INTO users(user_name, user_email, user_password)
         VALUES (?, ?, ?)');
 
         $stmt->bind_param('sss', $name, $email, md5($password));
 
         // if account was created successfully
+
         If($stmt->execute()){
           $user_id = $stmt->insert_id;
           $_SESSION['user_id'] = $user_id;
@@ -62,6 +69,7 @@ if(isset($_POST["register"])){
           header('location: account.php?register_success=You registreted succesfully!');
 
           // account could not be created
+
         } else {
           header('location: register.php?register=Could not create an accaount at the moment!');
         }
@@ -71,8 +79,7 @@ if(isset($_POST["register"])){
 }
 
 ?>
-
-      
+  
     <!-- Register -->
     <section class="my-5 py-5">
         <div class="container text-center mt-3 pt-5">
@@ -107,8 +114,6 @@ if(isset($_POST["register"])){
             </form>
         </div>
     </section>
-
-
 
 <?php 
 

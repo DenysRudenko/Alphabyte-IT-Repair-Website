@@ -52,7 +52,6 @@ if(isset($_GET['product_id'])) {
         <h1 class="h2">Dashboard</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <!-- Buttons can go here -->
           </div>
         </div>
       </div>
@@ -112,10 +111,6 @@ if(isset($_GET['product_id'])) {
 
   </form>
 </div>
-
-
-
-        <!-- Table goes here -->
       </div>
     </main>
   </div>

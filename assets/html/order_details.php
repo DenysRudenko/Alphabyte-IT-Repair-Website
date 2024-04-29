@@ -44,7 +44,6 @@ function calculateTotalOrderPrice($order_details) {
 
 ?>
 
-
     <!-- Order details -->
       <section id="orders" class="orders container my-5 py-3">
         <div class="container mt-5">
@@ -59,7 +58,6 @@ function calculateTotalOrderPrice($order_details) {
                 <th>Quantity</th>
             </tr>
 
-
             <?php foreach($order_details as $row) { ?>
 
                 <tr>
@@ -69,22 +67,14 @@ function calculateTotalOrderPrice($order_details) {
                             <div>
                                 <p class="mt-3"><?php echo $row['product_name']; ?></p>
                             </div>
-
-                        </div>
-                    
-                      
+                        </div>    
                     </td>
-
                     <td>
                       <span>$ <?php echo $row['product_price']; ?></span>
                     </td>
-
                     <td>
                       <span><?php echo $row['product_quantity']; ?></span>
-                    </td>
-                    
-
-                    
+                    </td>    
                 </tr>
 
             <?php }?>
@@ -101,11 +91,7 @@ function calculateTotalOrderPrice($order_details) {
                     <input class="btn btn-primary" name="order_pay_btn" type="submit" value="Pay Now">
                 </form>
                 
-        <?php } ?>
-            
-       
-    
-        
+        <?php } ?>       
        </section>
 
 <?php 
