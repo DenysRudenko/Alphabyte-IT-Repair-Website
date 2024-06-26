@@ -17,7 +17,6 @@ To get access to tests page in your search bar type: localhost:8000/tests/valida
 
 ![website preview](assets/images/screens/index.png)
 ![website preview](assets/images/screens/index_2.png)
-![website preview](assets/images/screens/index3.png)
 
 # Account Page
 
