@@ -1,146 +1,142 @@
 # Alphabyte-IT-Repair-Website
 
 # Run Index.php
+
 To run index.php in you terminal type:
 $ php -S localhost:8000
 
 # Run admin/login.php
+
 To get access to admin panel in your search bar type: localhost:8000/admin/login.php
 
 # Run tests/validation_tests_page.php
+
 To get access to tests page in your search bar type: localhost:8000/tests/validation_tests_page.php
+
+# Main Page
+
+![website preview](assets/images/screens/index.png)
+![website preview](assets/images/screens/index_2.png)
+![website preview](assets/images/screens/index3.png)
+
+# Account Page
+
+![website preview](assets/images/screens/acc.png)
+
+# Cart Page
+
+![website preview](assets/images/screens/cart.png)
+
+# Contact Page
+
+![website preview](assets/images/screens/contact.png)
+
+# Shop Page
+
+![website preview](assets/images/screens/shop1.png)
+
+# Pay Page
+
+![website preview](assets/images/screens/pay.png)
+
+# Product Page
+
+![website preview](assets/images/screens/product.png)
+
+# Database
+
+![website preview](assets/images/screens/db.png)
 
 # Web Development Server-Side: Project Sources
 
 ## Admin Files
 
 ### account.php
-•	Flex: https://getbootstrap.com/docs/4.1/utilities/flex/
 
+• Flex: https://getbootstrap.com/docs/4.1/utilities/flex/
 
 ### add_product.php
 
-•	Button: https://getbootstrap.com/docs/4.0/components/button-group/
+• Button: https://getbootstrap.com/docs/4.0/components/button-group/
 
-•	Isset: https://www.php.net/manual/en/function.isset.php
+• Isset: https://www.php.net/manual/en/function.isset.php
 
-•	PHP MySQL Prepared Statements: https://www.w3schools.com/php/php_mysql_prepared_statements.asp
+• PHP MySQL Prepared Statements: https://www.w3schools.com/php/php_mysql_prepared_statements.asp
 
-•	mysqli_stmt::bind_param: https://www.php.net/manual/en/mysqli-stmt.bind-param.php
+• mysqli_stmt::bind_param: https://www.php.net/manual/en/mysqli-stmt.bind-param.php
 
 ### edit_images.php
-•	HTML <form> enctype Attribute: https://www.w3schools.com/tags/att_form_enctype.asp
+
+• HTML <form> enctype Attribute: https://www.w3schools.com/tags/att_form_enctype.asp
 
 ### index.php
-•	Ceil: https://www.php.net/manual/en/function.ceil.php
 
-•	Foreach: https://www.php.net/manual/en/control-structures.foreach.php
+• Ceil: https://www.php.net/manual/en/function.ceil.php
 
-•	Bootstrap Plugins: https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js
+• Foreach: https://www.php.net/manual/en/control-structures.foreach.php
 
-•	https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js
+• Bootstrap Plugins: https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js
+
+• https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js
 
 ### sidemenu.php
-•	Shopping cart icon, bar chart, layers (data-feather): https://feathericons.com/?query=shop
+
+• Shopping cart icon, bar chart, layers (data-feather): https://feathericons.com/?query=shop
 
 ### update_images.php
-•	move_uploaded_file: https://www.php.net/manual/en/function.move-uploaded-file.php
+
+• move_uploaded_file: https://www.php.net/manual/en/function.move-uploaded-file.php
 
 ## Layout Files
 
 ### footer.php
-•	Images: https://getbootstrap.com/docs/4.0/content/images/
 
-•	Bootstrap plugin: https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js
+• Images: https://getbootstrap.com/docs/4.0/content/images/
+
+• Bootstrap plugin: https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js
 
 ### footer2.php
-•	Icons: https://fontawesome.com/v5/icons/facebook-f?f=brands&s=solid
 
-•	https://fontawesome.com/v5/icons/instagram?f=brands&s=solid
+• Icons: https://fontawesome.com/v5/icons/facebook-f?f=brands&s=solid
 
-•	https://fontawesome.com/v5/icons/twitter?f=brands&s=solid
+• https://fontawesome.com/v5/icons/instagram?f=brands&s=solid
 
+• https://fontawesome.com/v5/icons/twitter?f=brands&s=solid
 
 ### header.php
-•	Navbar: https://getbootstrap.com/docs/4.0/components/navbar/
 
-•	Bootstrap plugin: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+• Navbar: https://getbootstrap.com/docs/4.0/components/navbar/
 
-•	Icons: https://fontawesome.com/v4/icon/user
+• Bootstrap plugin: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+
+• Icons: https://fontawesome.com/v4/icon/user
 
 ## Server Files
 
 ### complete_payment.php:
-•	PHP - $_POST: https://www.w3schools.com/php/php_superglobals_post.asp
+
+• PHP - $\_POST: https://www.w3schools.com/php/php_superglobals_post.asp
 
 ## Assets Files:
 
 ### Account.php:
-•	Strlen: https://www.php.net/manual/en/function.strlen.php
 
-•	md5: https://www.php.net/manual/en/function.md5.php
+• Strlen: https://www.php.net/manual/en/function.strlen.php
 
-•	Spacing: https://getbootstrap.com/docs/4.0/utilities/spacing/
+• md5: https://www.php.net/manual/en/function.md5.php
+
+• Spacing: https://getbootstrap.com/docs/4.0/utilities/spacing/
 
 ## cart.php:
-•	array_column: https://www.php.net/manual/en/function.array-column.php
 
-•	Window alert(): https://www.w3schools.com
+• array_column: https://www.php.net/manual/en/function.array-column.php
+
+• Window alert(): https://www.w3schools.com
 
 ## index.php
+
 • Main image https://www.joberty.com/blog/games-to-learn-linux/
 
-## GitHub 
+## GitHub
 
 https://github.com/DenysRudenko/Alphabyte-IT-Repair-Website
-
-#### All other code sourced through Web-development server-side Moodle
-
-
-## Ryan
-
-### Assets:
-
-payment.php, register.php, shop.php, single_product.php
-
-### Server: 
-
-Complete_payment.php, Connection.php, get_featured_products.php, Get_products.php, ge_shoes.php, get_watches.php, place_order.php
-
-## Fergal
-
-### Assets: 
-
-Account.php, Cart.php, Checkout.php, Contact.php,Login.php, Order_details.php
-
-### Layouts:
-
-Footer.php, Footer2.php, header.php, header2.php
-
-### CSS: 
-
-Signin.css
-
-### SQL: 
-
-insert_script1.sql
-
-## Denys
-
-### Admin: 
-
-account.php, add_product.php, create_product.php, delete_product.php, edit_images.php, edit_order.php, edit_product.php, header.php, help.php, index.php, login.php, logout.php, products.php, sidemenu.php, update_images.php
-
-### Css: 
-
-Style.css
-
-### SQL: 
-
-create_tables_script.sql
-
-### Index.php: All collaborators 
-
-
-
-
