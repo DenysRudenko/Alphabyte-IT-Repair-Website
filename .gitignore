@@ -1,0 +1,7 @@
+
+# Private database exports
+/db/php_project.sql
+*.sql.gz
+*.sql.bak
+*.sqlite3
+*.env
